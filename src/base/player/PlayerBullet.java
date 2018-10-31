@@ -6,6 +6,7 @@ import base.physics.Physics;
 import base.Vector2D;
 import base.enemy.Enemy;
 import base.renderer.AnimationRenderer;
+import base.tank.Tank;
 import tklibs.SpriteUtils;
 
 import java.awt.image.BufferedImage;
@@ -25,6 +26,12 @@ public class PlayerBullet extends GameObject implements Physics {
     @Override
     public void run() {
         Enemy enemy = GameObject.intersect(Enemy.class, this);
+        Tank tank =GameObject.intersect(Tank.class,this);
+        if(tank!=null){
+            tank.takeDamage(this.damage);
+            this.hitTank();
+            return;
+        }
         if(enemy != null) {
             enemy.takeDamage(this.damage);
             this.hitEnemy();
@@ -36,7 +43,9 @@ public class PlayerBullet extends GameObject implements Physics {
         }
         this.position.addThis(velocity);
     }
+    public void hitTank(){
 
+    }
     public void hitEnemy() {
     }
 

@@ -20,7 +20,7 @@ public class Background extends GameObject {
         if(this.position.y >= 0) {
             return;
         } else {
-            this.position.y += 1/*speed*/;
+            this.position.y += 3/*speed*/;
         }
     }
 }

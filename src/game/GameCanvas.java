@@ -4,6 +4,7 @@ import base.*;
 import base.enemy.Enemy;
 import base.enemy.EnemyType1;
 import base.player.Player;
+import base.tank.TankSummon;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,6 +18,8 @@ public class GameCanvas extends JPanel {
         this.background = GameObject.recycle(Background.class); //Background
         this.player = GameObject.recycle(Player.class); //Player
         EnemyType1 enemy = GameObject.recycle(EnemyType1.class); //Enemy
+        TankSummon tanks=GameObject.recycle(TankSummon.class);//Tanks
+
     }
 
     //Run: hàm để Update even khi có thay đổi về số liệu  (x += 1)
